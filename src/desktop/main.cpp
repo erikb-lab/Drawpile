@@ -1426,6 +1426,10 @@ extern "C" void drawpileMain(int argc, char **argv)
 #endif
 
 #ifdef Q_OS_ANDROID
+	// Disable Qt's network bearer polling. This prevents Qt from incorrectly 
+	// blocking TCP connections over Bluetooth PAN/Tethering when WiFi is off.
+	qputenv("QT_BEARER_POLL_TIMEOUT", "-1");
+
 	// Android has a weird title bar by default, we want a menu bar instead.
 	QApplication::setAttribute(Qt::AA_DontUseNativeMenuBar);
 	// Android uses native dialogs for message boxes and the like, whose

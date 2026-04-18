@@ -10,6 +10,14 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <!-- ACCESS_NETWORK_STATE is required by Qt somehow. Not sure what for. -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    
+    <!-- Bluetooth requirements as requested for Amazon Fire HD 10 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-feature android:name="android.hardware.bluetooth" android:required="true" />
+    <!-- Explicitly declare WiFi is not required -->
+    <uses-feature android:name="android.hardware.wifi" android:required="false" />
+    
     <!-- WAKE_LOCK is used to prevent the device from severing the connection to
          the server by sleeping when it is locked -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
